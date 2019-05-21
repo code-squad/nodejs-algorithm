@@ -1,11 +1,5 @@
 const solution = (arr, commands) => {
-    const answer = [];
-    const first = commands.map( el => el[0]-1 );
-    const second = commands.map( el => el[1] );
-    const third = commands.map( el => el[2]-1 );
-    for ( let i = 0; i <  first.length; i++ ){
-        answer.push(arr.slice(first[i],second[i]).sort(sortFuc)[third[i]]);
-    }
+    let answer = commands.map( el => arr.slice(el[0]-1,el[1]).sort(sortFuc)[el[2]-1])
     return answer;
 }
 
