@@ -7,7 +7,8 @@ int solution(vector<int> citations) {
     for(int i = 10000; i >= 0; --i){
         auto iter = upper_bound(citations.begin(), citations.end(), i); // i보다 큰 원소의 첫 위치
         auto iter2 = lower_bound(citations.begin(), citations.end(), i); // i보다 같거나 큰 원소의 첫 위치
-        if(distance(citations.begin(), iter) <= i &&
+        int same = distance(iter2, iter);
+        if(distance(citations.begin(), iter) - same <= i &&
            distance(iter2, citations.end()) >= i) return i;
     }
     
