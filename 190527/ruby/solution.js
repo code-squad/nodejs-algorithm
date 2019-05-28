@@ -20,6 +20,6 @@ const solution = (answers) => {
         if(el === Math.max(...num)){
             answer.push(i+1)
         }
-    })
+    }) 
     return answer
 }
