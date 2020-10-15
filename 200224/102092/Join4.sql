@@ -1,0 +1,10 @@
+/*
+https://programmers.co.kr/learn/courses/30/lessons/59045
+*/
+
+SELECT OUTS.ANIMAL_ID, OUTS.ANIMAL_TYPE, OUTS.NAME
+FROM ANIMAL_INS AS INS
+RIGHT JOIN ANIMAL_OUTS AS OUTS
+ON INS.ANIMAL_ID = OUTS.ANIMAL_ID
+WHERE INS.SEX_UPON_INTAKE IN ('Intact Female' , 'Intact Male') AND
+OUTS.SEX_UPON_OUTCOME IN ('Neutered Male', 'Spayed Female');
